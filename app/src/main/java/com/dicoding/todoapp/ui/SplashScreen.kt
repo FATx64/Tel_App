@@ -8,6 +8,7 @@ import android.os.Looper
 import android.view.WindowManager
 import com.dicoding.todoapp.R
 import com.dicoding.todoapp.ui.list.TaskActivity
+import com.dicoding.todoapp.ui.login.LoginActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -22,7 +23,7 @@ class SplashScreen : AppCompatActivity() {
         )
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, TaskActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
