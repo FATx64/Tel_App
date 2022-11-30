@@ -19,6 +19,7 @@ import com.dicoding.todoapp.model.UserModel
 import com.dicoding.todoapp.model.UserPreference
 import com.dicoding.todoapp.ui.ViewModelFactory
 import com.dicoding.todoapp.ui.list.TaskActivity
+import com.dicoding.todoapp.ui.register.RegisterActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -73,12 +74,6 @@ class LoginActivity : AppCompatActivity() {
                 password.isEmpty() ->{
                     binding.edtPassword.error = "Masukkan password"
                 }
-                email != user.email -> {
-                    binding.edtEmail.error = "email tidak sesuai"
-                }
-                password != user.password ->{
-                    binding.edtPassword.error = "passsword tidak sesuai"
-                }
                 else ->{
                     loginViewModel.login()
                     AlertDialog.Builder(this).apply {
@@ -95,6 +90,12 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+        binding.tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            finish()
         }
     }
 
