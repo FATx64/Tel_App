@@ -40,5 +40,9 @@
     <string name="search_hint">Masukkan kata</string>
     <string name="logo">logo</string>
     <string name="tanjung_enim_lestari">Tanjung Enim Lestari</string>
+    <string name="form_detail">Silahkan isi form dibawah ini</string>
+    <string name="tv_register">Register</string>
+    <string name="tv_email_form">Masukkan email</string>
+    <string name="tv_password_form">Masukkan password</string>
 
 </resources>
