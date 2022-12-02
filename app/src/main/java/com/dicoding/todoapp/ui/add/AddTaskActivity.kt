@@ -32,23 +32,11 @@ class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListen
     private  var pickImage = 100
     private var imageUri: Uri? = null
 
-
-    companion object{
-        private const val REQUEST_CODE_PERMISSION = 10
-        private val REQUIRED_PERMISSION = arrayOf(Manifest.permission.CAMERA)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*
-        binding.btnAddPict.setOnClickListener {
-            startGallery()
-        }
-
-         */
 
         supportActionBar?.title = getString(R.string.add_task)
         val viewModelFactory = ViewModelFactory.getInstance(this)
