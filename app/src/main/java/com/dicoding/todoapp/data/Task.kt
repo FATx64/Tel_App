@@ -1,10 +1,11 @@
 package com.dicoding.todoapp.data
 
+import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//TODO 1 : Define a local database table using the schema in app/schema/tasks.json
+
 @Entity(tableName = "tasks")
 data class Task(
     @PrimaryKey(autoGenerate = true)
@@ -20,6 +21,7 @@ data class Task(
 
     @ColumnInfo(name = "departemen") val departemen: String,
 
-    @ColumnInfo(name = "keterangan") val keterangan: String
-
+    @ColumnInfo(name = "keterangan") val keterangan: String,
+    
+    @ColumnInfo(name = "tanggalMasuk") val tanggalMasuk: Long
 )

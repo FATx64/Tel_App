@@ -18,7 +18,7 @@ import java.util.concurrent.Executors
 //TODO 3 : Define room database class and prepopulate database using JSON
 @Database(
     entities = [Task::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class TaskDatabase : RoomDatabase() {
@@ -52,6 +52,7 @@ abstract class TaskDatabase : RoomDatabase() {
             }
         }
 
+
         private fun fillWithStartingData(context: Context, dao: TaskDao) {
             val task = loadJsonArray(context)
             try {
@@ -66,7 +67,8 @@ abstract class TaskDatabase : RoomDatabase() {
                                 item.getLong("dueDate"),
                                 item.getBoolean("completed"),
                                 item.getString("departemen"),
-                                item.getString("keterangan")
+                                item.getString("keterangan"),
+                                item.getLong("tanggalMasuk")
                             )
                         )
                     }
@@ -95,5 +97,7 @@ abstract class TaskDatabase : RoomDatabase() {
             return null
         }
 
+
     }
+
 }

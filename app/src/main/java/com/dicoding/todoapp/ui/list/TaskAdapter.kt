@@ -21,17 +21,14 @@ class TaskAdapter(
 
     //TODO 8 : Create and initialize ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        //throw NotImplementedError("Not yet implemented")
         return TaskViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.task_item, parent, false))
 
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task = getItem(position) as Task
-        //TODO 9 : Bind data to ViewHolder (You can run app to check)
         holder.bind(task)
         when {
-            //TODO 10 : Display title based on status using TitleTextView
             task.isCompleted -> {
                 //DONE
                 holder.cbComplete.isChecked = true

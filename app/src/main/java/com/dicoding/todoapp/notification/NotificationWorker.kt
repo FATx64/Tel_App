@@ -35,7 +35,7 @@ class NotificationWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, p
     }
 
     override fun doWork(): Result {
-        //TODO 14 : If notification preference on, get nearest active task from repository and show notification with pending intent
+
         val taskPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val task = taskPref.getBoolean(applicationContext.getString(R.string.pref_key_notify), false)
         if (task){

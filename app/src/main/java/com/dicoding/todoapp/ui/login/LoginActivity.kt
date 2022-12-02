@@ -12,12 +12,10 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.todoapp.R
 import com.dicoding.todoapp.UserViewModelFactory
 import com.dicoding.todoapp.databinding.ActivityLoginBinding
 import com.dicoding.todoapp.model.UserModel
 import com.dicoding.todoapp.model.UserPreference
-import com.dicoding.todoapp.ui.ViewModelFactory
 import com.dicoding.todoapp.ui.list.TaskActivity
 import com.dicoding.todoapp.ui.register.RegisterActivity
 

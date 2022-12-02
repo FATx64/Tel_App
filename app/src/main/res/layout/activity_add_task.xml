@@ -50,6 +50,28 @@
             android:src="@drawable/ic_date" />
 
         <TextView
+            android:id="@+id/add_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tanggal masuk" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.ImageButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/due_date"
+            android:onClick="showDatePicker"
+            android:src="@drawable/ic_date" />
+
+        <TextView
             android:id="@+id/add_tv_due_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,27 +105,5 @@
             android:id="@+id/ed_keterangan"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:textSize="15sp"
-        android:text="Tanda Tangan"/>
-
-    <ImageView
-        android:id="@+id/iv_image_preview"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:contentDescription="@string/image_sign"
-        android:paddingTop="10dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="10dp"
-        android:src="@drawable/ic_baseline_image_24" />
-
-    <Button
-        android:id="@+id/btn_add_pict"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tambah_gambar"/>
 
 </LinearLayout>

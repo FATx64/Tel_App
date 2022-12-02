@@ -25,6 +25,7 @@ import java.util.*
 
 class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListener {
     private var dueDateMillis: Long = System.currentTimeMillis()
+    private var addDate: Long = System.currentTimeMillis()
     private lateinit var viewModel: AddTaskViewModel
     private lateinit var binding: ActivityAddTaskBinding
     lateinit var imageView: ImageView
@@ -48,11 +49,6 @@ class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListen
         }
 
          */
-        imageView = findViewById(R.id.iv_image_preview)
-        binding.btnAddPict.setOnClickListener {
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            startActivityForResult(gallery,pickImage)
-        }
 
         supportActionBar?.title = getString(R.string.add_task)
         val viewModelFactory = ViewModelFactory.getInstance(this)
@@ -83,9 +79,6 @@ class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListen
                 val edtDescription = findViewById<TextInputEditText>(R.id.add_ed_description)
                 val edtDepartemen = findViewById<TextInputEditText>(R.id.ed_departemen)
                 val edtKeterangan = findViewById<TextInputEditText>(R.id.ed_keterangan)
-                val btnAddPict = findViewById<Button>(R.id.btn_add_pict)
-                imageView = findViewById(R.id.iv_image_preview)
-
 
 
                 val title = edtTitle.text.toString()
@@ -94,7 +87,7 @@ class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListen
                 val keterangan = edtKeterangan.text.toString()
 
 
-                val newTask = Task(0,title, description, dueDateMillis, false, departemen, keterangan)
+                val newTask = Task(0,title, description, dueDateMillis, false, departemen, keterangan, addDate)
                 viewModel.addTask(newTask)
                 onBackPressed()
                 true
@@ -113,9 +106,11 @@ class AddTaskActivity : AppCompatActivity(), DatePickerFragment.DialogDateListen
         calendar.set(year, month, dayOfMonth)
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         findViewById<TextView>(R.id.add_tv_due_date).text = dateFormat.format(calendar.time)
+        findViewById<TextView>(R.id.add_tv_date).text = dateFormat.format(calendar.time)
 
+        addDate = calendar.timeInMillis
         dueDateMillis = calendar.timeInMillis
-    }
 
+    }
 
 }
